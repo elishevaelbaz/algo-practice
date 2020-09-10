@@ -1,7 +1,14 @@
+// Time complexity O(n^2)
+// not good ^
+// but compare a lot, but only swap a few times (as opposed to bubble sort where there are a lot of swaps)
+// so if worried about minimizing memory (not common),
+// otherwise, not optimal 
+
+// SELECTION SORT:
 // look for the minimum value at put it at the front:
 // look through elements, finding the minimum, 
 // and when get to the end of the array, 
-//swap that min value with whatever value we are comparing it with (from towards the beg/left side of array)
+// swap that min value with whatever value we are comparing it with (from towards the beg/left side of array)
 
 //==================//
 // Pseudocode
