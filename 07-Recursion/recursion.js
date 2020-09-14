@@ -4,7 +4,7 @@ function factorial(n){
   if (n === 0 || n === 1){
     return 1
   }
-  return num * factorial(n -1)
+  return n * factorial(n -1)
 }
 
 // return odd numbers in an array without changing original array
