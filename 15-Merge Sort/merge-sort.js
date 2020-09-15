@@ -83,3 +83,5 @@ function mergeSort(array){
 
   return merge(left, right)
 }
+
+console.log(mergeSort([1, 2, 6, 3, 4, 8]))
