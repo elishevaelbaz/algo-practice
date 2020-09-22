@@ -59,24 +59,23 @@ class SinglyLinkedList{
     if (this.length === 0){
       return undefined
     }
-    else{
-      let current = this.head
-      let newTail;
-      while (current.next){
-        newTail = current
-        current = current.next
-      }
-      newTail.next = null;
-      this.tail = newTail;
-      this.length--;
-      // special case, where the list only has one element, that you pop 
-      // otherwise the head and tail will still be set to that element, even though it's been removed and list is empty
-      if (this.length ===0){
-        this.head = null;
-        this.tail = null
-      }
-      return current;
+    let current = this.head
+    let newTail;
+    while (current.next){
+      newTail = current
+      current = current.next
     }
+    newTail.next = null;
+    this.tail = newTail;
+    this.length--;
+    // special case, where the list only has one element, that you pop 
+    // otherwise the head and tail will still be set to that element, even though it's been removed and list is empty
+    if (this.length === 0){
+      this.head = null;
+      this.tail = null
+    }
+    return current;
+    
   } 
   shift(){
     if (this.length === 0){ // or !this.head
@@ -86,7 +85,7 @@ class SinglyLinkedList{
       let oldHead = this.head;
       this.head = oldHead.next
       this.length--;
-      if (this.length ===0){
+      if (this.length === 0){
         this.tail = null // because otherwise tail isn't being changed
       }
       return oldHead;
