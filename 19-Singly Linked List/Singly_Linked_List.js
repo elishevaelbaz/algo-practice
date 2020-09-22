@@ -84,6 +84,7 @@ class SinglyLinkedList{
     else {
       let oldHead = this.head;
       this.head = oldHead.next
+      oldHead.next = null; // remove connection of node we are shifting
       this.length--;
       if (this.length === 0){
         this.tail = null // because otherwise tail isn't being changed

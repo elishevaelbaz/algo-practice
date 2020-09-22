@@ -1,4 +1,4 @@
- class Node{
+class Node{
   constructor(val){
     this.val = val;
     this.next = null;
@@ -6,14 +6,14 @@
   }
  }
 
- class DoublyLinkedList{
-   constructor(){
-     this.head = null;
-     this.tail = null;
-     this.length = 0;
-   }
+class DoublyLinkedList{
+  constructor(){
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 
-   push(val){
+  push(val){
     let newNode = new Node(val)
     if (this.length === 0){
       this.head = newNode;
@@ -26,9 +26,9 @@
     }
     this.length++;
     return this
-   }
-   // much simpler than in singly linked list
-   pop(){
+  }
+  // much simpler than in singly linked list
+  pop(){
     if (this.length === 0){
       return undefined
     }
@@ -152,8 +152,27 @@
     return removedNode;
   }
 
-
- }
+  reverse(){
+    //start from the end
+    let currentNode = this.tail;
+    // swap the tail and the head
+    this.tail = this.head;
+    this.head = currentNode;
+    // loop through the array
+    for(let i = 0; i < this.length; i++) {
+      // swap the current node's prev and next
+      let previous = currentNode.prev
+      currentNode.prev = currentNode.next;
+      currentNode.next = previous
+      
+      // even though the loop is going forward,
+      // currentNode starts as the original tail, and it's .next is now it's original previous, so basically traversing it backwards
+      currentNode = currentNode.next 
+    }
+    return this
+  }
+  
+}
 
  let list = new DoublyLinkedList()
 list.push("hello")
