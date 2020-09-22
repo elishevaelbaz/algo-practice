@@ -11,7 +11,7 @@ Different data structures excel at different things
 Some are very specialised, others are more generally used (like arrays)  
 
 ### Why are they important?
-- as a developer, likely to need one of these structures  
+- As a developer, will likely to need one of these structures  
 - You've already worked with many of them unknowingly (DOM in JavaScript === tree)
 - Interviews!
 
