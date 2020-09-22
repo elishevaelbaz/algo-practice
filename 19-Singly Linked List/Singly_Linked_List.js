@@ -69,8 +69,128 @@ class SinglyLinkedList{
       newTail.next = null;
       this.tail = newTail;
       this.length--;
+      // special case, where the list only has one element, that you pop 
+      // otherwise the head and tail will still be set to that element, even though it's been removed and list is empty
+      if (this.length ===0){
+        this.head = null;
+        this.tail = null
+      }
       return current;
     }
+  } 
+  shift(){
+    if (this.length === 0){ // or !this.head
+      return undefined
+    }
+    else {
+      let oldHead = this.head;
+      this.head = oldHead.next
+      this.length--;
+      if (this.length ===0){
+        this.tail = null // because otherwise tail isn't being changed
+      }
+      return oldHead;
+    }
+  }
+  // add to the beginning of a list 
+  unshift(val){
+    let newNode = new Node(val)
+    if (!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    else{
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  // get(num) will return the item in that spot (but there are no indices, so must traverse `num` times)
+  get(index){
+    if (index < 0 || index >= this.length){
+      return null
+    }
+    else{
+      let current = this.head
+      for (let i = 0; i < index; i++){
+        current = current.next
+      }
+      return current
+    }
+  }
+  // change the value of a node
+  set(index, value){
+    let foundNode = this.get(index)
+    if (foundNode){
+      foundNode.val = value
+      return true
+    }
+    return false // if node doesn't exist, return false
+  }
+  // if index is less than 0, or greater than the length return false
+  // if index is 0, use unshift
+  // if index is the length of the list, use push
+  // otherwise
+    // use get method to find node at (index - 1)
+    // set it's next property to the newly created node
+    // connect the new node to the old next node
+    // increment the length 
+    // return true
+  insert(index, value){
+    if (index < 0 || index > this.length){
+      return false
+    }
+    if (index === 0){
+      this.unshift(value)
+      return true
+    }
+    // can coerce to boolean 
+    // if (index === this.length) return !!this.push(val)
+    if (index === this.length){
+      this.push(value)
+      return true
+    }
+    let newNode = new Node(value)
+    let prev = this.get(index - 1)
+    newNode.next = prev.next;
+    prev.next = newNode;
+    this.length++;
+    return true;
+  }
+
+  remove(index){
+    if (index < 0 || index >= this.length){
+      return undefined
+    }
+    if (index === 0){
+      return this.shift()
+    }
+    if (index === this.length - 1){
+      return this.pop()
+    }
+    let prev = this.get(index -1)
+    let removedNode = prev.next
+    prev.next = removed.next //prev.next.next
+    this.length--;
+    return removedNode; 
+  }
+  // reverse singly linked list in place
+  reverse(){
+    let next;
+    let prev = null; // so that way tail.next will be null
+    let node = this.head;
+    this.head = this.tail // head is now the original tail
+    this.tail = node; // tail is original head (we swapped h&t)
+    for (let i = 0; i < this.length; i++){
+      next = node.next // storing the next
+      node.next = prev // setting the new next to be prev (so it's reversed)
+      // next 2 lines moving to the next element in orig list, (shifting things over)
+      prev = node // previous is set to the current node
+      node = next // current node is now the next node
+    }
+    return this;
   }
 }
 
