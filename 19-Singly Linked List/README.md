@@ -1,6 +1,6 @@
 # Singly Linked List
 
-Data structure - can store strings, numbers etc
+Singly linked list is a data structure - can store strings, numbers etc
 it's a list, with no indices (not like array)
 just has a bunch of elements, called __nodes__, that point to the next element, but can't use an index to access (can't look for the 5th element)
 
