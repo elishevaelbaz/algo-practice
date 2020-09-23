@@ -1,11 +1,11 @@
 // piece of data - val
 // reference ot next node - next
 
-class Node{
-    constructor(val){
-        this.val = val;
-        this.next = null;
-    }
+class Node {
+  constructor(val){
+    this.val = val;
+    this.next = null;
+  }
 }
 
 // with just the Node class can do the following
@@ -18,7 +18,7 @@ class Node{
 
 // but it's bad way to rep linked list because you need to chain so many '.next'
 
-class SinglyLinkedList{
+class SinglyLinkedList {
   constructor(){
     this.head = null;
     this.tail = null;
