@@ -44,3 +44,25 @@ function fib(n){
   if (n === 1 || n === 2) return 1
   return fib(n-1) + fib(n-2)
 }
+
+function fibonacciNoRecursion(n){
+
+  if (n < 0) return undefined
+  // if (n <= 1) return 1
+  let previous = 1;
+  let sum = 1;
+  for (let i = 2; i <= n; i++){
+    let temp = sum;
+    sum += previous;
+    previous = temp;
+  }
+  return sum
+}
+
+console.log(fibonacciNoRecursion(0))
+console.log(fibonacciNoRecursion(1))
+console.log(fibonacciNoRecursion(2))
+console.log(fibonacciNoRecursion(3))
+console.log(fibonacciNoRecursion(4))
+console.log(fibonacciNoRecursion(5))
+console.log(fibonacciNoRecursion(6))
