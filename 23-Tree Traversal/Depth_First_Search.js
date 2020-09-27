@@ -1,3 +1,7 @@
+// Depth First Search
+// traverse down (vertically), before visiting sibling nodes
+
+
 // can use any tree, 
 //just using BST because I can copy it from earlier file
 class Node {
@@ -72,26 +76,70 @@ class BinarySearchTree {
     }
     return current
   }
-// using array for simplicity, but would really use queue
-  BreadthFirstSearch(){
+  // PreOrder
+  // 1. visit the node (add to the list)
+  // 2. left (in binary tree example)
+  // 3. right
+  DFSPreOrder(){
     let data = [];
-    let queue = [];
-    let current = this.root;
-    queue.push(current)
-
-    while(queue.length){
-      current = queue.shift();
-      data.push(current.val)
-      if (current.left){
-        queue.push(current.left)
+    function traverse(node){
+      data.push(node.val)
+      if (node.left){
+        traverse(node.left)
       }
-      if(current.right){
-        queue.push(current.right)
+      if (node.right){
+        traverse(node.right)
       }
     }
+    traverse(this.root);
     return data
   }
+  //PostOrder
+  // 1. left
+  // 2. right
+  // 3. visit the node (add to the list)
+    DFSPostOrder(){
+    let data = [];
+    function traverse(node){
+      if (node.left){
+        traverse(node.left)
+      }
+      if (node.right){
+        traverse(node.right)
+      }
+      data.push(node.val)
+    }
+    traverse(this.root);
+    return data
+  }
+  //InOrder - in sort order if binary search tree
+  // 1. left
+  // 2. visit the node (add to the list)
+  // 3. right
+  DFSInOrder(){
+    let data = []
+    function traverse(node){
+      if (node.left){
+        traverse(node.left)
+      }
+      data.push(node.val)
+      if (node.right){
+        traverse(node.right)
+      }
+    }
+    traverse(this.root);
+    return data;
+  }
+
 
 }
 
 let tree = new BinarySearchTree();
+tree.insert(10)
+tree.insert(6)
+tree.insert(15)
+tree.insert(3)
+tree.insert(8)
+tree.insert(20)
+tree.DFSPreOrder()
+tree.DFSPostOrder()
