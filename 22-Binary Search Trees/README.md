@@ -43,4 +43,5 @@ Since they are sorted, each time we search or insert, we go to the left or right
 As the number of nodes in Binary search tree __doubles__, the number of steps only increases by __1__  
 ^ this is true for _best_ and _average_ case but  
 __THIS IS NOT GUARANTEED__  
-Can have a valid BST that is basically a singly linked list (each node only has 1 child node)
+Can have a valid BST that is basically a singly linked list (each node only has 1 child node), and would need to visit each node
+<img src="BST-worst-case.png" alt="worst case binary search tree">
