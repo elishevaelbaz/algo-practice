@@ -43,7 +43,7 @@ Suppose we wanted to insert a large number (worst case) we are only comparing it
 Each time we go down a step in binary heap, we are doubling the number of nodes, but each we are only increasing the number of comparisons by 1  
 
 We mentioned in BST, the worst case, wouldn't be O(log n), but it would be linear - how ever many nodes are in there  
-<img src="../22-Binary%20Search%20Trees/BST-worst-case.png" alt="worst case binary search tree">
+<img src="../22-Binary%20Search%20Trees/BST-worst-case.png" alt="worst case binary search tree">  
 but this won't be a problem with heaps because the one of the rules for a heap is that it be balanced, ie filled out left to right
 
 Best and worst case: Insertion and Deletion: __O(log n)__  
