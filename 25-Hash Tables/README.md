@@ -1,4 +1,4 @@
-#Hash Table / Hash Map
+# Hash Table / Hash Map
 
 Most languages have a hash table/ hash map variation built in (like array), won't have to build it ourselves. (but we will for learning sake, to understand what is working behind the scenes)
 
