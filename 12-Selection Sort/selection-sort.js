@@ -19,7 +19,7 @@
 // compare this to next elem in array
 // if at any point, find a smaller number, store that index instead (saving the index, not the value)
 
-// if the minimum is not the same one you started with (ie not the same index), swap the two vlalues
+// if the minimum is not the same one you started with (ie not the same index), swap the two values
 // otherwise, it's in the right place, so don't do anything
 // repeat - starting with the next item in the array
 
@@ -44,3 +44,5 @@ function swap(arr, idx1, idx2){
   arr[idx1] = arr[idx2];
   arr[idx2] = temp;
 }
+// even best case, if the array is nearly sorted, will still be O(n^2)
+// still needs to go through and check all the values for the min
