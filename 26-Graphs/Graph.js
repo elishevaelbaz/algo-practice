@@ -5,7 +5,7 @@ class Graph {
     this.adjacencyList = {}
   }
 
-  // adds a key to the adjaceny list with the name of the vertex 
+  // adds a key to the adjacency list with the name of the vertex 
   // and sets it's value to be an empty array
   addVertex(vertex){
     if (!this.adjacencyList[vertex]){ //checking if it already exists first so won't overwrite
