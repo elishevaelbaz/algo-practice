@@ -62,7 +62,7 @@ class Graph {
     // using arrow function to bind
     // or right before the helper function, need to say 
       //const adjacencyList = this.adjacencyList; 
-    // becuase 'this' won't refer to the graph inside helper function
+    // because 'this' won't refer to the graph inside helper function
     const dfs = (vertex) => {
       if (!this.adjacencyList[vertex]) return;
       result.push(vertex);
@@ -76,7 +76,6 @@ class Graph {
     // invoke helper funcction
     dfs(startVertex)
     return result
-    
   }
 
   // DFS Iterative - gets a different order than recursive, but still Depth-first
