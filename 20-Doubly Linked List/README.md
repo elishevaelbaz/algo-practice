@@ -1,6 +1,6 @@
 # Doubly Linked List
 
-Double linked lists are similar to singly linked lists, but each node also points to the __previous node__  
+Doubly linked lists are similar to singly linked lists, but each node also points to the __previous node__  
 
 This improves efficiency of some things like using `pop()` to remove the last item in array, or `reverse()` the list  
 
