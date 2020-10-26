@@ -15,7 +15,7 @@ JS does not come with stack data type, but they are relatively simple to impleme
 1. Easiest way is to use an array data type (using `push()` and `pop()` to add to/remove from the end)
 (can also use `shift()` and `unshift()` as long as you are consistent - adding/removing from the beginning - still LIFO, but doing so is *bad* time complexity for arrays - need to shift all the indices)  
 
-2. Liked List is better for efficiency than an array - when you have a huge number of elements, since we only need LIFO capability, we aren't accessing anything based off the index, only accessing based off the order it was added  
+2. Linked List is better for efficiency than an array - when you have a huge number of elements, since we only need LIFO capability, we aren't accessing anything based off the index, only accessing based off the order it was added  
 
 Time Complexity:  
 Insertion and Removal: __O(1)__ Constant Time  
