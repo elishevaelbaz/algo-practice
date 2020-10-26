@@ -172,7 +172,7 @@ class SinglyLinkedList {
     }
     let prev = this.get(index -1)
     let removedNode = prev.next
-    prev.next = removed.next //prev.next.next
+    prev.next = removedNode.next //prev.next.next
     this.length--;
     return removedNode; 
   }
@@ -196,4 +196,8 @@ class SinglyLinkedList {
 
 let list = new SinglyLinkedList()
 // list.push("hello")
+// list.push("test")
 // list.push("goodbye")
+// console.log(list)
+// console.log(list.remove(1))
+// console.log(list)
