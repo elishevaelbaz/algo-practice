@@ -16,13 +16,13 @@ Visit every sibling node (horizontally) before we look at a child
 
 Create a queue, and a variable `data` to store the values of nodes visited (an array [2,5,8,3,19])  
 Place the root node in the queue  
-As long as there is anything in the queue, dequque a node from the queue and push the value of the node into the variable that stores the nodes  
+As long as there is anything in the queue, dequeue a node from the queue and push the value of the node into the variable that stores the nodes  
 if the dequeued node has a left property, add it to the queue.  
 if the dequeued node has a right property, add it to the queue.  
 When it falls out of the loop because there is nothing in the queue, return the variables that stores all the nodes (`data`)
 
 ## Depth First Search
-Traverse down (vertically) before visiting sibling nodes
+Traverse down (vertically) before visiting sibling nodes  
 3 steps that we change the order depending if we are doing PreOrder PostOrder or InOrder
 
 - visit the node itself
@@ -30,8 +30,8 @@ Traverse down (vertically) before visiting sibling nodes
 - explore/traverse the right
 
 Use __recursion__  
-Create a variable `data` to store the values of the nodes visitied  
-Create a variable `current` and store the root of the tree in it
+Create a variable `data` to store the values of the nodes visited  
+Create a variable `current` and store the root of the tree in it  
 Write a helper function which accepts a node
 1. push the value of the node to the `data` variable ( -> PreOrder, for PostOrder would be 2,3,1, and InOrder would be 2,1,3 )
 2. if the node has a left property, recursively call the helper function with the left property of the current node
