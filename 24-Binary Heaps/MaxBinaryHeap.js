@@ -41,7 +41,7 @@ class MaxBinaryHeap {
   // return the extracted root
 
   // PSEUDOCODE:
-  // swap the first value in the values property eith the last one
+  // swap the first value in the values property with the last one
   // pop from the values property, so you can return the value at the end
   // have the new root bubble down to the correct spot
     // parent index starts at 0 (the root)
