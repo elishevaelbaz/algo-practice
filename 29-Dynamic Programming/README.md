@@ -10,8 +10,9 @@ For those problems that can be solved with __dynamic programming__, it can make 
 
 - **optimal substructure**
 
-__overlapping subproblems__ - can break one problem down into subproblems which are reused several times
-For example: fibonacci sequence:
+### overlapping subproblems
+can break one problem down into subproblems which are reused several times  
+For example - fibonacci sequence:
 
 <img src="fib-tree.png" alt="visual of tree data structure">
 
@@ -22,3 +23,20 @@ MergeSort on the other hand, involves _subproblems_ (breaking a big problem into
 <img src="merge-sort-example.png" alt="visual of tree data structure">
 
 (A special case would be `mergeSort([10, 24, 10, 24])`, there is overlap, because would split to `[10, 24]`, `[10, 24]`)
+
+### optimal substructure
+An optimal solution can be constructed from optimal solutions of its subproblems  
+
+For example - fibonacci sequence:
+optimal solution of fib(5) depends on best solution of fib(4)and fib(3)  
+
+shortest path between vertices on a graph:  
+can construct the optimal solution for shortest path from A -> D from the subproblems and their optimal solutions  
+includes the shortest path from A -> C 
+and the shortest path from A -> B 
+<img src="shortest-path.png" alt="visual of tree data structure">
+
+On the other hand, booking cheapest flight would _not_ be optimal substructure.  
+If you want to book a flight from SF to Fairbanks, Alaska, the cheapest flight is SF -> Seattle -> Alaska  
+If this was a case of optimal substructure, that would mean that the cheapest way to from SF -> Seattle is direct, but it's actually not the cheapest.  
+SF -> Portland -> Seattle is the cheapest (because of the way airlines work and incentivize different flights/trips etc).
