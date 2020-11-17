@@ -57,4 +57,23 @@ Time complexity with memoization solution: __O(n)__ - grows linearly with size o
 We are calculating fib(6), fib(5), fib(4) etc - each one __1 time__ and any time afterwards we just look it up in the array   
 (looking up an item based on it's index is constant time)
 
- 
+** Up until now we have been working **top-down** - to get fib(7) we calculate fib(6) and fib(5) etc  
+Starting with what we are trying to find and working our way down to fill in the gaps and then adding everything together
+
+Another way is **bottom-up** - find fib(1) and fib(2) add them together and then go to fib(3) and add that etc until we get to fib(7) - we get the same result, but we are working from a different direction  
+Can do this using **tabulation**
+
+### Tabulation
+Usually done using **iteration** (a loop)  
+- Starts from the bottom - the smallest subproblem of what we are trying to solve  
+- Stores the results in a **"table"** (usually an array)  
+- Then does something with the data (for fibonacci add them up)  
+- Keeps moving forward until we arrive at the solution.  
+
+Fibonacci using tabulation - (See js file)  
+
+Time complexity with tabulation solution: __O(n)__ - a loop that grows linearly with size of n, but space complexity of memoized version is worse (see note below).
+
+__Note:__ When using **memoization**, we are still using recursion, so if you try to do a big enough number (10,000), you will get a stack overflow (maximum call stack size exceeded).   
+ This will not happen for tabulation because it doesn't take as much space  
+ (fibonacci is a flawed example because the solution is too big for Javascript to actually give the accurate result, but in another language that would give the accurate answer, memoization would still overflow)

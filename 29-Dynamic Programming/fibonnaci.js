@@ -17,14 +17,14 @@ console.log(fib(7))
 // we are REPEATING THINGS:
 
 // let's use dynamic programming/Memoization to "remember" the old values
-function fibDynamic(n, memo={}){ // or can use an array
+function memoizedFib(n, memo={}){ // or can use an array
   if (memo[n]){
     return memo[n];
   }
   else if (n === 1 || n === 2){
     return 1;
   }
-  let result = fibDynamic(n-1, memo) + fibDynamic(n-2, memo);
+  let result = memoizedFib(n-1, memo) + memoizedFib(n-2, memo);
   memo[n] = result;
   return result;
 }
@@ -40,6 +40,26 @@ function fibDynamic(n, memo={}){ // or can use an array
 
  // O(n) - grows linearly with size of n 
 
-console.log(fibDynamic(5))
-console.log(fibDynamic(1))
-console.log(fibDynamic(45)) // very fast now - instantaneous
+console.log(memoizedFib(5))
+console.log(memoizedFib(1))
+console.log(memoizedFib(45)) // very fast now - instantaneous
+
+
+// let's use dynamic programming/Tabulation
+function tabulatedFib(n){ 
+  if (n === 1 || n === 2){
+    return 1;
+  }
+  const fibNums = [0, 1, 1]
+  for (let i = 3; i <= n; i++){
+    fibNums[i] = fibNums[i-1] + fibNums[i-2]
+  }
+  return fibNums[n]
+}
+
+ // O(n) - loop that grows linearly with size of n 
+
+console.log("---------")
+console.log(tabulatedFib(5))
+console.log(tabulatedFib(1))
+console.log(tabulatedFib(45)) 
