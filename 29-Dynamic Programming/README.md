@@ -8,7 +8,7 @@ For those problems that can be solved with __dynamic programming__, it can make 
 
 2 indicators that we can use dynamic programming on a given problem:
 
-- **overlapping subproblems** - 
+- **overlapping subproblems** 
 
 - **optimal substructure**
 
@@ -53,7 +53,7 @@ To solve this we can use __Memoization__ as a way to store the answers to the re
 
 We use memoization to "remember" the old values, so we don't have to recalculate the same things each time.  
 
-Time complexity with memoization solution: __O(n)__ - grows linearly with size of n 
+Time complexity with memoization solution: __O(n)__ - grows linearly with size of n  
 We are calculating fib(6), fib(5), fib(4) etc - each one __1 time__ and any time afterwards we just look it up in the array   
 (looking up an item based on it's index is constant time)
 

@@ -57,7 +57,7 @@ invalid inputs
 `charCount(343)`
 
 #### Step 3: Break it Down
-explicitly write out the steps you need to take.  
+Explicitly write out the steps you need to take.  
 This forces you to think about the code you will write before you write it, and helps catch any lingering conceptual issues or misunderstandings before you dive in and worry about the details (like language syntax).  
 
 Ex: _Write a function which takes in a string and returns counts of each character in the string._ 
