@@ -32,7 +32,7 @@ function same(arr1, arr2){
 }
 ```
 
-refactored O(n) - 2 separate loops (not nested)
+refactored O(n) - 3 separate loops (not nested)
 ```js
 function same(arr1, arr2){
   if (arr1.length !== arr2.length){
