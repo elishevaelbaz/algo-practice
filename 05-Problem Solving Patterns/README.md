@@ -15,7 +15,7 @@ same([1,2,3], [1,9]) // false
 same([1,2,1], [4,4,1]) // false (must be same frequency)
 ```
 
-naive solution (nested loops - indexOf is a loop)
+__Naive solution__ (nested loops - indexOf is a loop)
 ```js
 function same(arr1, arr2){
   if (arr1.length !== arr2.length){
@@ -32,7 +32,7 @@ function same(arr1, arr2){
 }
 ```
 
-refactored O(n) - 3 separate loops (not nested)
+__Refactored solution__ O(n) - 3 separate loops (not nested)
 ```js
 function same(arr1, arr2){
   if (arr1.length !== arr2.length){
