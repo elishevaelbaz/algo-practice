@@ -26,7 +26,7 @@ function insertionSort(array){
     for (; j >= 0 && array[j] > currentVal; j--){      
       // we have the currentVal saved as variable (so don't worry about overwriting)
       // copy over the larger value - one space to the right
-      // [1, 2, 9, 22, 76, 20] --> [1, 2, 9, 22 76, 76] -->[1, 2, 9, 22, 22, 76] etc until we find where to insert currentVal
+      // [1, 2, 9, 22, 76, 20] --> [1, 2, 9, 22, 20, 76] -->[1, 2, 9, 20, 22, 76] etc until we find where to insert currentVal
       array[j+1] = array[j];
       }
       // when we fall out of the loop, arr[j] is now 9 (the val smaller than currentVal)

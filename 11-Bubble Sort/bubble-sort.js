@@ -1,4 +1,4 @@
-// not super effficient not commonly used except certain use-case
+// not super efficient not commonly used except certain use-case
 
 // O(n^2) -> 2 loops
 // O(n) when array is nearly sorted, it's linear 
