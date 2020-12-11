@@ -34,7 +34,7 @@ So all the numbers with 0 in their last digit (ones place), will be before those
 Now we repeat the process, looking at the next digit - (2nd from the right)  
 The number of times it repeats is based on the number of digits in the longest number.  
   If the highest number has 4 digits, will do the process 4 times.  
-(Meanwhile, the smaller numbers end up in the 0 bucket - when we are up to the 2rd pass, any number with 1 digit has a 0 in the 2nd position, so will belong in the 0 bucket, and so on)
+(Meanwhile, the smaller numbers end up in the 0 bucket - when we are up to the 2nd pass, any number with 1 digit has a 0 in the 2nd position, so will belong in the 0 bucket, and so on)
 
 ### Time Complexity
 (there is controversy around this, but here is the generally accepted notation)  
