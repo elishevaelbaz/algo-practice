@@ -1,7 +1,7 @@
 // helper functions
 
 // getDigit takes in a number and a position, and returns the number in that position
-// getDIgit(12345, 0) //=> 1
+// getDigit(12345, 0) //=> 1
 // only works for base 10 number
 function getDigit(num, place) {
   return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10; // Math.abs is just to deal with negative nums
