@@ -76,7 +76,7 @@ It is very useful for keeping track of a subset of data in an array/string etc.
 
 Example: _Write a function called __maxSubarraySum__, which accepts an array of integers and a number called __n__. The function should calculate the maximum sum of __n__ consecutive elements in the array._  
 
-__Naive solution__ (nested loops)
+__Naive solution__ (nested loops - really innefficient always re-adding digits)
 ```js
 function maxSubarraySum(arr, num){
   if (num > arr.length){
@@ -84,7 +84,6 @@ function maxSubarraySum(arr, num){
   }
   let max = -Infinity
   for (let i = 0; i < arr.length - num + 1; i++){
-    console.log(i)
     let temp = 0;
     for (let j = 0; j < num; j++){
       temp += arr[i+j];
@@ -97,31 +96,25 @@ function maxSubarraySum(arr, num){
 }
 ```
 
-__Refactored solution__ O(n) - 3 separate loops (not nested)
-```js
-function same(arr1, arr2){
-  if (arr1.length !== arr2.length){
-    return false
-  }
-  let frequencyCounter1 = {}
-  let frequencyCounter2 = {}
-  for (let val of arr1){
-    frequencyCounter1[val] = (frequencyCounter1[val] || 0 ) + 1
-  }
-  for (let val of arr2){
-    frequencyCounter2[val] = (frequencyCounter2[val] || 0 ) + 1
-  }
 
-  for (let key in frequencyCounter1){
-    // if the key squared (ie the number from the input squared) is not in there at all 
-    if (!(key ** 2 in frequencyCounter2)){
-      return false
-    }
-    // if the FREQUENCY of the key squared is not the same
-    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
-      return false
-    }
+__Refactored solution__ O(n) - 2 separate loops (not nested)
+```js
+function maxSubarraySum(arr, num){
+  let maxSum = 0;
+  let tempSum = 0;
+  if (num > arr.length){
+    return null;
   }
-  return true
-}
+  for (let i = 0; i < num; i++){
+    maxSum += arr[i]
+  }
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++){
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum)
+  }
+  return maxSum;
+  }
 ```
+
+We start out by adding the first n numbers together. Then we don't have to re-add numbers. Instead (starting from arr[num + 1]) we just subtract the first number from the calculation, and add the next number in the array. We are sliding the window one element to the right.
